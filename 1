@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Kingdom Hub</title>
+    <style>
+        /* CSS STYLING - Futuristic Dark Mode Matrix Vibe */
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-red: #da3637;
+            --text-main: #c9d1d9;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 { color: var(--accent-green); margin: 5px 0; font-size: 1.5rem; }
+        h2 { color: var(--accent-blue); font-size: 1.1rem; margin-top: 0; }
+
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        /* Forms & Inputs */
+        label { display: block; margin: 10px 0 5px; font-weight: bold; color: var(--accent-blue); }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        /* Video Call Layout simulation */
+        .video-box {
+            background-color: #000;
+            width: 100%;
+            height: 180px;
+            border: 2px dashed var(--accent-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        /* User Management Controls */
+        .user-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .btn-group { display: flex; gap: 5px; }
+
+        /* Buttons */
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+        }
+        .btn-green { background-color: var(--accent-green); color: white; width: 100%; margin-top: 10px; }
+        .btn-blue { background-color: var(--accent-blue); color: black; }
+        .btn-orange { background-color: #d29922; color: black; font-size: 0.8rem; }
+        .btn-red { background-color: var(--accent-red); color: white; font-size: 0.8rem; }
+
+        /* Desktop Optimization */
+        @media (min-width: 768px) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[ SCIENCE KINGDOM INTERFACE ]</h1>
+        <p>Cybersecurity & Multidisciplinary Student Network</p>
+    </header>
+
+    <div class="grid-container">
+
+        <!-- MODULE 1: PUBLIC HOSTING & QUEUE -->
+        <div class="card">
+            <h2>1. Broadcast a New Meeting</h2>
+            <form id="meetingForm">
+                <label for="meetingName">Meeting Topic / Label:</label>
+                <input type="text" id="meetingName" placeholder="e.g., MHA Quirks vs Physics Laws" required>
+
+                <label for="category">Science Department Field:</label>
+                <select id="category" required>
+                    <option value="" disabled selected>-- Select Discipline --</option>
+                    <option value="paleo">Paleontology & Deep Time</option>
+                    <option value="mapping">Satellite Terrain Mapping (GIS)</option>
+                    <option value="aerospace">Aerospace Engineering & Rockets</option>
+                    <option value="theoretical">Theoretical Physics & Anime Science</option>
+                </select>
+
+                <button type="button" class="btn-green" onclick="alert('Meeting created successfully! Waiting for peers to join...')">INITIALIZE STAGE</button>
+            </form>
+        </div>
+
+        <!-- MODULE 2: LIVE MEETING STAGE WITH SPLIT CONTROLS -->
+        <div class="card">
+            <h2>2. Active Public Stage</h2>
+            <div class="video-box">
+                <span>[ Camera Stream Blocked by Default ]</span>
+            </div>
+            
+            <h3>Active Room Participants (Admin Mod Powers)</h3>
+            <div id="userList">
+                <div class="user-row">
+                    <span>Student_Chrome (Typing...)</span>
+                    <div class="btn-group">
+                        <button class="btn-orange" onclick="alert('Tier 1 Protocol: Student_Chrome set to READ-ONLY. They can still watch and learn.')">🔇 SILENCE</button>
+                        <button class="btn-red" onclick="alert('Tier 2 Protocol: Force-disconnecting Student_Chrome.')">❌ KICK</button>
+                    </div>
+                </div>
+                <div class="user-row">
+                    <span>Troll_Account404</span>
+                    <div class="btn-group">
+                        <button class="btn-orange" onclick="alert('User has been chat muted.')">🔇 SILENCE</button>
+                        <button class="btn-red" onclick="alert('Threat neutralized. User permanently ejected from this session.')">❌ KICK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 3: PRIVATE CHAT LOUNGE (INVITE ONLY) -->
+        <div class="card">
+            <h2>3. Secure Private Lounges</h2>
+            <p style="font-size: 0.85rem; color: #8b949e;">Invite-only zones. Content filters offline. Conversations can get off-topic if all parties consent.</p>
+            
+            <label for="inviteUser">Select Peer to Invite:</label>
+            <input type="text" id="inviteUser" placeholder="Enter username (e.g., Dr_Xeno)">
+            
+            <button type="button" class="btn-green" style="background-color: var(--accent-blue); color: black;" onclick="alert('Private direct transmission link encrypted and sent.')">CREATE PRIVATE CHAT</button>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC - Pure Karel-Style Event Processing -->
+    <script>
+        console.log("Science Kingdom Systems online. Access parameters structuralized.");
+        
+        // This is where your code will process things like:
+        // dailyCallObject.updateParticipant() commands later on!
+    </script>
+
+</body>
+</html>
